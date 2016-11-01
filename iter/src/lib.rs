@@ -10,12 +10,14 @@
 
 //! External iterators for generic mathematics
 
+#![no_std]
+
 extern crate num_traits as traits;
 extern crate num_integer as integer;
 
 use integer::Integer;
 use traits::{Zero, One, CheckedAdd, ToPrimitive};
-use std::ops::{Add, Sub};
+use core::ops::{Add, Sub};
 
 /// An iterator over the range [start, stop)
 #[derive(Clone)]
