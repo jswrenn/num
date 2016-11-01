@@ -10,6 +10,10 @@
 
 //! Complex numbers.
 
+#![cfg_attr(not(feature = "rustc-serialize"), no_std)]
+
+extern crate core;
+
 extern crate num_traits as traits;
 
 #[cfg(feature = "rustc-serialize")]
@@ -18,10 +22,10 @@ extern crate rustc_serialize;
 #[cfg(feature = "serde")]
 extern crate serde;
 
-use std::fmt;
+use core::fmt;
 #[cfg(test)]
-use std::hash;
-use std::ops::{Add, Div, Mul, Neg, Sub};
+use core::hash;
+use core::ops::{Add, Div, Mul, Neg, Sub};
 
 use traits::{Zero, One, Num, Float};
 
